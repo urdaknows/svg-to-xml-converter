@@ -3,7 +3,9 @@
 ![Project Status](https://img.shields.io/badge/status-active-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-A lightweight, mobile-friendly web tool to convert SVG files into Android VectorDrawable XML format. No external libraries required! Built with pure JavaScript, HTML, and CSS, this project is perfect for Android developers who need to convert vector graphics on the go.
+A mobile-friendly tool to convert SVG files into Android VectorDrawable XML, built with pure HTML, CSS, and JavaScript. No dependencies, just upload and download! 📱✨
+
+#SVGtoXML #AndroidDev #VectorDrawable #WebTool #MobileFriendly #NoDependencies #JavaScript #OpenSource
 
 ## 🚀 Features
 
@@ -17,6 +19,11 @@ A lightweight, mobile-friendly web tool to convert SVG files into Android Vector
 ## 📖 How It Works
 
 This tool parses SVG files using the browser's `DOMParser`, extracts supported elements (`<path>`, `<rect>`, `<circle>`), and converts them into an Android VectorDrawable XML format. It supports basic attributes like `fill`, `stroke`, and `stroke-width`, ensuring the generated XML is ready to use in Android projects.
+
+## 🔗 Try It Now
+
+Test the converter directly in your browser:  
+👉 [Live Demo](https://iKiwo.github.io/svg-to-xml-converter/)
 
 ## 🖼️ Demo
 
