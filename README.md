@@ -5,8 +5,6 @@
 
 A mobile-friendly tool to convert SVG files into Android VectorDrawable XML, built with pure HTML, CSS, and JavaScript. No dependencies, just upload and download! 📱✨
 
-#SVGtoXML #AndroidDev #VectorDrawable #WebTool #MobileFriendly #NoDependencies #JavaScript #OpenSource
-
 ## 🚀 Features
 
 - **SVG to VectorDrawable Conversion**: Converts SVG files to Android-compatible XML (VectorDrawable) without external dependencies.
