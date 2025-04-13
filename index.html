@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG to XML Converter for Android</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SVG to XML Converter</h1>
+        <div class="upload-section">
+            <label for="svg-input" class="upload-label">Upload SVG</label>
+            <input type="file" id="svg-input" accept="image/svg+xml" />
+        </div>
+        <div id="loader" class="loader" style="display: none;">Loading...</div>
+        <div class="preview-section">
+            <div class="svg-preview">
+                <h3>SVG Preview</h3>
+                <div id="svg-container"></div>
+            </div>
+            <div class="xml-preview">
+                <h3>Generated XML</h3>
+                <pre id="xml-output"></pre>
+            </div>
+        </div>
+        <button id="convert-btn" disabled>Convert & Download</button>
+        <div id="error-message" class="error"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    font-size: 16px;
+    -webkit-tap-highlight-color: transparent; /* Evita el resaltado al tocar en móviles */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.upload-section {
+    margin: 20px 0;
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.2em;
+    touch-action: manipulation;
+    transition: background-color 0.2s ease;
+}
+
+.upload-label:hover {
+    background-color: #0056b3;
+}
+
+#svg-input {
+    display: none;
+}
+
+.loader {
+    margin: 20px 0;
+    font-size: 1.1em;
+    color: #007bff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.preview-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.svg-preview, .xml-preview {
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.svg-preview h3, .xml-preview h3 {
+    font-size: 1.1em;
+    margin: 0 0 15px;
+    color: #444;
+}
+
+#svg-container {
+    min-height: 150px;
+    max-height: 40vh;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+}
+
+#svg-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+#xml-output {
+    min-height: 150px;
+    max-height: 40vh;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 15px;
+    overflow-x: auto;
+    text-align: left;
+    font-size: 0.95em;
+    line-height: 1.4;
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+}
+
+#convert-btn {
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+    touch-action: manipulation;
+    transition: background-color 0.2s ease;
+}
+
+#convert-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#convert-btn:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.error {
+    color: #d32f2f;
+    margin: 15px 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .preview-section {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .svg-preview, .xml-preview {
+        width: 48%;
+    }
+
+    #convert-btn {
+        width: auto;
+        padding: 12px 40px;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    .upload-label, #convert-btn {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    .svg-preview h3, .xml-preview h3 {
+        font-size: 1em;
+    }
+
+    #xml-output {
+        font-size: 0.9em;
+    }
+}
