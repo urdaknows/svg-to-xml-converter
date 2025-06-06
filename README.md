@@ -35,4 +35,4 @@ Test the converter directly in your browser:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/iKiwo/svg-to-xml-converter.git
+   git clone https://github.com/urdaknows/svg-to-xml-converter.git
