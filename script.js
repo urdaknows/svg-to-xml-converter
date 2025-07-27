@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     let svgContent = null;
     let xmlContent = null;
-    let svgFileName = null; // Guardar el nombre del archivo SVG
+    let svgFileName = null;
 
     // Manejar la carga del archivo SVG
     svgInput.addEventListener('change', async (event) => {
         const file = event.target.files[0];
         if (!file) return;
 
-        // Guardar el nombre del archivo SVG (sin extensión)
-        svgFileName = file.name.replace(/\.[^/.]+$/, ""); // Quita la extensión
+        // Guardar el nombre del archivo SVG
+        svgFileName = file.name.replace(/\.[^/.]+$/, "");
 
         // Validar tipo MIME y extensión
         if (!file.type.includes('svg') && !file.name.endsWith('.svg')) {
@@ -25,10 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // Mostrar loader
             loader.style.display = 'block';
 
-            // Leer el archivo
             svgContent = await readFile(file);
             if (!isValidSVG(svgContent)) {
                 showError('The file is not a valid SVG.');
@@ -46,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             xmlContent = await convertToVectorDrawable(svgContent);
             xmlOutput.textContent = xmlContent;
 
-            // Ocultar loader
             loader.style.display = 'none';
         } catch (err) {
             showError('Error processing the SVG: ' + err.message);
@@ -62,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Leer archivo como texto
     function readFile(file) {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -72,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Validar SVG
     function isValidSVG(content) {
         try {
             const parser = new DOMParser();
@@ -85,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Convertir SVG a VectorDrawable manualmente
     function convertToVectorDrawable(svg) {
         try {
             // Parsear el SVG
@@ -206,11 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `#FF${r}${g}${b}`;
             }
         }
-        // Por defecto, negro opaco
         return '#FF000000';
     }
 
-    // Descargar archivo XML
     function downloadXML(content, fileName) {
         const blob = new Blob([content], { type: 'text/xml' });
         const url = URL.createObjectURL(blob);
@@ -221,13 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
         URL.revokeObjectURL(url);
     }
 
-    // Mostrar error
     function showError(message) {
         errorMessage.textContent = message;
         convertBtn.disabled = true;
     }
 
-    // Resetear UI
     function resetUI() {
         svgContainer.innerHTML = '';
         xmlOutput.textContent = '';

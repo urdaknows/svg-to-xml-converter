@@ -4,7 +4,7 @@ body {
     padding: 10px;
     background-color: #f4f4f4;
     font-size: 16px;
-    -webkit-tap-highlight-color: transparent; /* Evita el resaltado al tocar en móviles */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -64,7 +64,7 @@ h1 {
     background-color: white;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 0 0 3px #0b86f8;
 }
 
 .svg-preview h3, .xml-preview h3 {
@@ -81,7 +81,6 @@ h1 {
     align-items: center;
     justify-content: center;
     overflow: auto;
-    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
 }
 
 #svg-container svg {
@@ -99,7 +98,6 @@ h1 {
     text-align: left;
     font-size: 0.95em;
     line-height: 1.4;
-    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
 }
 
 #convert-btn {
@@ -133,7 +131,6 @@ h1 {
     line-height: 1.4;
 }
 
-/* Media Queries para pantallas grandes */
 @media (min-width: 768px) {
     .container {
         max-width: 1200px;
